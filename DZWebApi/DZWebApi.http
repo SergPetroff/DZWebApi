@@ -1,0 +1,6 @@
+@DZWebApi_HostAddress = http://localhost:5118
+
+GET {{DZWebApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
