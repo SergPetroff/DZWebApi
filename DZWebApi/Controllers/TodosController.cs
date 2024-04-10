@@ -38,5 +38,17 @@ namespace DZWebApi.Controllers
             return Ok(todo);
         }
 
+        [HttpGet]
+        [Route("{id:guid}")]
+        public async Task<IActionResult> GetTodo([FromRoute] Guid id)
+        {
+            var todo = await dbContext.Todos.FindAsync(id);
+            if (todo == null)
+            {
+                return NotFound();
+            }
+            return Ok(todo);
+        }
+
     }
 } 
